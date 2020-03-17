@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'antd';
+import { Button, Input } from 'antd';
+import './demo.less';
 // import 'antd/dist/antd.css';
 
 function BoilingVerdict(props) {
@@ -23,16 +24,21 @@ export default class Calculator extends React.Component {
 
   render() {
     const temperature = this.state.temperature;
+    const code1 =""
     return (
-      <fieldset>
-        <legend>输入摄氏度数值:</legend>
-        <Button>1111</Button>
-        <input
-          value={temperature}
-          onChange={this.handleChange} />
-        <BoilingVerdict
-          celsius={parseFloat(temperature)} />
-      </fieldset>
+      <div className= "demo1">
+        <fieldset>
+          <p className="a">ssssss</p>
+          <legend>输入摄氏度数值:</legend>
+          <Input
+            style={{ width: 100, textAlign: 'center' }}
+            value={temperature}
+            onChange={this.handleChange} />
+          <BoilingVerdict
+            celsius={parseFloat(temperature)} />
+        </fieldset>
+      </div>
+      
     );
   }
 }

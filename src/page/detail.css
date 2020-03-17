@@ -1,0 +1,10 @@
+.back{
+  width:100%;
+  height:10vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconH{
+  font-size: 30rm;
+}

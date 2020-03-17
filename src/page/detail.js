@@ -1,46 +1,27 @@
 import React from 'react';
-import { List, Avatar } from 'antd';
-import 'antd/dist/antd.css';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { PageHeader, Row, Col,  } from 'antd';
+import {
+  HomeOutlined
+} from '@ant-design/icons';
+import Demo from '../components/demo/demo';
+import './detail.css'
 
-
-const data = [
-  {
-    title: 'Ant Design Title 1',
-  },
-  {
-    title: 'Ant Design Title 2',
-  },
-  {
-    title: 'Ant Design Title 3',
-  },
-  {
-    title: 'Ant Design Title 4',
-  },
-  {
-    title: 'Ant Design Title 5',
-  },
-  {
-    title: 'Ant Design Title 6',
-  },
-];
-function App() {
-  return (
-    <div>
-      <List
-        itemLayout="horizontal"
-        dataSource={data}
-        renderItem={item => (
-          <List.Item>
-            <List.Item.Meta
-              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-              title={<a href="https://ant.design">{item.title}</a>}
-              description="Ant Design, a design language "
-            />
-          </List.Item>
-        )}
-      />
-    </div>
-  );
+function back(){
+  this.$router.push('/home');
 }
-
-export default App;
+export default class Uio extends React.Component {
+  render() {
+    return (
+      <div>
+        <Row className="back">
+            <Link to="/">
+              <HomeOutlined className="iconH"/>
+            </Link>
+        </Row>
+        <Demo />
+      </div>
+    )
+  }
+}
